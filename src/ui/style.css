@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+:root {
+  font-family: "Space Grotesk", sans-serif;
+  color: #e7e5df;
+  background: #161817;
+  line-height: 1.4;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+header {
+  margin-bottom: 4rem;
+}
+.eyebrow {
+  font: 500 0.75rem "DM Mono";
+  letter-spacing: 0.18em;
+  color: #d3f36b;
+}
+h1 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.08em;
+  margin: 0.7rem 0 1.5rem;
+}
+h1 em {
+  font-style: normal;
+  color: #9b9d94;
+}
+.intro {
+  color: #9b9d94;
+  font-size: 1.1rem;
+}
+.card {
+  background: #222522;
+  border: 1px solid #353934;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1.3rem;
+}
+.card form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 0.7rem;
+}
+.card input,
+.card select {
+  background: #161817;
+  border: 1px solid #454941;
+  color: #e7e5df;
+  padding: 0.9rem;
+  font: inherit;
+  min-width: 0;
+}
+.card button,
+button {
+  background: #d3f36b;
+  color: #161817;
+  border: 0;
+  padding: 0.9rem 1.2rem;
+  font: 600 0.85rem inherit;
+  cursor: pointer;
+}
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quiet {
+  background: none;
+  color: #d3f36b;
+  padding: 0;
+}
+.request {
+  border-top: 1px solid #353934;
+  padding: 1.25rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 0.25rem;
+  column-gap: 0.6rem;
+}
+.request strong {
+  display: block;
+}
+.request small {
+  display: block;
+  color: #777c72;
+  font: 0.7rem "DM Mono";
+  margin-top: 0.35rem;
+}
+.request-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.retry-now {
+  background: none;
+  color: #d3f36b;
+  padding: 0;
+  font: 0.7rem "DM Mono";
+}
+
+.delete {
+  background: none;
+  color: #ff8e7a;
+  padding: 0;
+  font: 0.7rem "DM Mono";
+}
+
+.status {
+  text-transform: uppercase;
+  font: 500 0.7rem "DM Mono";
+  color: #d3f36b;
+}
+.needs_selection {
+  color: #ffd479;
+}
+.failed,
+.queue_deleted,
+.error {
+  color: #ff8e7a;
+}
+.error,
+.retry,
+.reason {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.reason summary {
+  color: #ff8e7a;
+  cursor: pointer;
+  font: 0.85rem "DM Mono";
+}
+
+.reason pre {
+  margin: 0.5rem 0 0;
+  color: #ffb0a2;
+  font: 0.75rem/1.4 "DM Mono";
+  white-space: pre-wrap;
+  user-select: text;
+}
+.retry {
+  color: #d3f36b;
+  font: 0.7rem "DM Mono";
+}
+.choices {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+.choices button {
+  background: #30352e;
+  color: #e7e5df;
+  text-align: left;
+  width: 100%;
+}
+.choices small {
+  color: #d3f36b;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 3rem 1rem;
+  }
+  .card form {
+    grid-template-columns: 1fr;
+  }
+  .request {
+    grid-template-columns: 1fr;
+  }
+  .request-actions {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,9 @@
+services:
+  songarr:
+    build: .
+    ports: ["3000:3000"]
+    env_file: .env
+    volumes: ["songarr-data:/data"]
+    restart: unless-stopped
+volumes:
+  songarr-data:
