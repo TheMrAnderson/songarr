@@ -4,7 +4,7 @@ Songarr is a self-hosted request workflow for music. Users can request a song or
 
 It is not a Lidarr replacement or a second music catalog.
 
-## Quick start
+## Run locally
 
 Requirements: Node.js 22+ and npm.
 
@@ -12,9 +12,21 @@ Requirements: Node.js 22+ and npm.
     npm install
     npm run dev
 
-Open http://localhost:3000. For Docker:
+Open http://localhost:3000. Set LIDARR_BASE_URL and LIDARR_API_KEY in .env to enable requests to Lidarr. The complete configuration reference is in [OPERATIONS.md](OPERATIONS.md).
+
+## Run with Docker Compose
+
+Create the environment file, then start the published image:
+
+    cp .env.example .env
+    docker compose pull
+    docker compose up -d
+
+The image is published as ghcr.io/TheMrAnderson/songarr:latest. Set the GHCR package visibility to Public once in GitHub so this pull works without credentials. To run the current checkout instead, build it locally:
 
     docker compose up --build
+
+Open http://localhost:3000. Compose stores SQLite data in the named songarr-data volume, mounted at /data in the container. Use docker compose logs -f songarr to follow logs and docker compose down to stop the service.
 
 Start with [the documentation map](DOCUMENTATION.md) for architecture, configuration, API contracts, and operating notes.
 

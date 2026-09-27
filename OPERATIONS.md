@@ -16,9 +16,16 @@ Local SQLite data is stored at ./data/songarr.db. Useful commands:
 ## Docker
 
     cp .env.example .env
+    docker compose pull
+    docker compose up -d
+
+The published image is `ghcr.io/TheMrAnderson/songarr:latest`. Set the GHCR package visibility to Public once in GitHub so Compose can pull it without credentials. To run the current checkout rather than the published image, use:
+
     docker compose up --build
 
 The container stores SQLite at /data/songarr.db. Mount or retain the Compose songarr-data volume.
+
+Use `docker compose logs -f songarr` to follow the application and `docker compose down` to stop it. Songarr is unauthenticated in Phase 1; keep it behind deliberate access protection before exposing it publicly.
 
 ## Configuration
 
